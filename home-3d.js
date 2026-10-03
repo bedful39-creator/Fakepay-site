@@ -1,6 +1,6 @@
 /* ============================================================
    PayMod — real Minecraft block textures, cube rigs, interactions
-   Textures are real 16x16 PNG files bundled in mcassets/java/block/:
+   Textures are real 16x16 PNG files embedded as data URIs:
    emerald, lapis, redstone, quartz, gold, and diamond blocks.
    No procedural / generated art.
    ============================================================ */
@@ -10,10 +10,18 @@
 
   var REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var TEX_DIR = "mcassets/java/block/";
+  var TEX = {
+    emerald_block: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAwUlEQVQ4T52R0Q2DQAxD2QKpYoEO0AEqdRJGqToES5QtGKNTVOovxSec+pJQIT6s3EXhOT6adrrNR3UaL3ODw/3zDLq+H1WF2ldfhB7UDecfwNPVJetVAFxY/RZ0VfcA4Ab/NlFnVMxuAvwW3KzEWbZgDREUwA/96gZY5gJAQXTdBaBzBeLDrdlDzSJkAAx75xTApkbgXWE2qxGMLo5bSgH6ePZwAIsww61ChD3OXoBVAM1qzry7Hn9xAYCGwxHh2y/m+kzA61j7uAAAAABJRU5ErkJggg==",
+    lapis_block: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAJ1BMVEUmWas3Z5IxYYsrVo0gUJwdSpUgSooeQoUeQHwcOJAbNYgZNYQUMnFwYZSdAAAAfElEQVR42g2Jh2HEAAgD7yT8+w8cQ0xRLbPwgWnTtBN5zC+ZiL9u31w5IZ5XJhd6bAQs9fQs+5q1oCCyJUx53ohHC2TLaMA/Yy5X2/s4eLprrd5XE9GbMipLd9FtJ7dN0Fck3do3igBJRyjgiWzaOe9k5WOmeZrEd4LT8g+iCTMHWBFMGAAAAABJRU5ErkJggg==",
+    redstone_block: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAElBMVEUAAABzDACUFACkGAi9IAjmIAgd4YarAAAAAXRSTlMAQObYZgAAAF9JREFUGBkFwYFhBCEABCFGL/1X/G6gPwDAZ5qRRge2x/aMg9d6b/PDEc86s3Ny77ZhuE+HV0C/cawNmObQCchyJDmJOPiZd01yr0hPrD6mJdI6am4syWdOakV8ggT4B9TJMj71DhNqAAAAAElFTkSuQmCC",
+    quartz_block: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAElBMVEXy7+3u6ubu5t7q4tri3tDd2csPbMi3AAAAUUlEQVR42jXJsQGDABBFIZ7e/iP7U4WWAwA4heDDexLYUFcwIziGNGG3CSZw2PBgPGegAQ6JGTjJBsiZAYUdkMB3B2lrhhOZDXL1P2H3ehgQfiVEJE/bMmjpAAAAAElFTkSuQmCC",
+    gold_block: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAG1BMVEX+/73//ZD/7E/+4Ej/2D71zCf5vSPTljLMjidMMDrkAAAAeklEQVR42hXLsRHCMBAEwPsf5dw5JxB0QAfMQAnUSStEhIALsF8iBj3D5msXKIz5Lp/rLmza3kueFuzrAkfOhnjRp6C4GhzNlE8dS4DxdcFhYK9oLloaMhxgYw642+jATcX42G/Gvw+X5hpuvTLE5nlQNq29TOycFOcf/6MxqUgMRiYAAAAASUVORK5CYII=",
+    diamond_block: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAG1BMVEX////V//ae/utw+/Bl9eNL7eY94OUVwsYOur1j/GYQAAAAeklEQVR42hXLsRHCMBAEwPsf5dw5JxB0QAfMQAnUSStEhIALsF8iBj3D5msXKIz5Lp/rLmza3kueFuzrAkfOhnjRp6C4GhzNlE8dS4DxdcFhYK9oLloaMhxgYw642+jATcX42G/Gvw+X5hpuvTLE5nlQNq29TOycFOcf/6MxqUgMRiYAAAAASUVORK5CYII="
+  };
 
+  // real PNGs embedded as data URIs — no asset folder needed on the host
   function texPath(name) {
-    return TEX_DIR + name + ".png";
+    return TEX[name] || "";
   }
 
   /* ----------------------------------------------------------
