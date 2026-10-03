@@ -1,0 +1,107 @@
+/* ============================================================
+   PayMod — 3D cube / bloom / orbit styling (mint bloom)
+   ============================================================ */
+
+/* ---------- cool mint bloom behind every cube ---------- */
+
+.h3-bloom {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 500px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  background:
+    radial-gradient(circle,
+      rgba(150, 255, 210, 0.30),
+      rgba(80, 235, 170, 0.12) 40%,
+      rgba(0, 0, 0, 0) 68%),
+    radial-gradient(circle,
+      rgba(45, 205, 150, 0.20),
+      rgba(45, 205, 150, 0.06) 55%,
+      rgba(0, 0, 0, 0) 78%);
+}
+
+/* ---------- cube rig ---------- */
+
+.h3-cube-wrap {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+}
+
+.h3-cube {
+  position: relative;
+  width: 154px;
+  height: 154px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.h3-cube.dragging { cursor: grabbing; }
+
+/* green glow shell that lives inside every cube (faces paint over its centre) */
+.h3-cube::before {
+  content: "";
+  position: absolute;
+  inset: -22%;
+  pointer-events: none;
+  background: radial-gradient(circle,
+    rgba(130, 255, 205, 0.35),
+    rgba(60, 225, 160, 0.10) 45%,
+    rgba(0, 0, 0, 0) 70%);
+}
+
+.h3-cube i {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-size: 100% 100%;
+  background-color: #4c6a5e; /* neutral fallback if a texture 404s */
+  image-rendering: pixelated;
+  backface-visibility: hidden;
+}
+
+/* face shading + green silhouette glow for a blocky, lit look */
+.h3-cube i.fr { filter: brightness(1) drop-shadow(0 0 14px rgba(130, 255, 200, 0.5)); }
+.h3-cube i.bk { filter: brightness(0.76) drop-shadow(0 0 14px rgba(130, 255, 200, 0.5)); }
+.h3-cube i.rt { filter: brightness(0.88) drop-shadow(0 0 14px rgba(130, 255, 200, 0.5)); }
+.h3-cube i.lf { filter: brightness(0.82) drop-shadow(0 0 14px rgba(130, 255, 200, 0.5)); }
+.h3-cube i.up { filter: brightness(1.08) drop-shadow(0 0 14px rgba(130, 255, 200, 0.5)); }
+.h3-cube i.dn { filter: brightness(0.6) drop-shadow(0 0 14px rgba(130, 255, 200, 0.5)); }
+
+/* ---------- orbiting showcase ---------- */
+
+.h3-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+}
+
+.h3-arm {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.h3-arm .h3-cube {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+@media (max-width: 640px) {
+  .h3-hero-stage .h3-cube-wrap { transform: scale(0.72); }
+  .h3-scene .h3-cube-wrap { transform: scale(0.72); }
+}

@@ -1,0 +1,5 @@
+# PayMod — https://paymod.net/
+User-agent: *
+Allow: /
+
+Sitemap: https://paymod.net/sitemap.xml
