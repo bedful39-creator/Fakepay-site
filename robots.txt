@@ -1,5 +1,5 @@
-# PayMod — https://bedful39-creator.github.io/Fakepay-site/
+# PayMod — https://www.fakepay.net/
 User-agent: *
 Allow: /
 
-Sitemap: https://bedful39-creator.github.io/Fakepay-site/sitemap.xml
+Sitemap: https://www.fakepay.net/sitemap.xml
