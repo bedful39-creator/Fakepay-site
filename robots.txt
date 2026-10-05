@@ -1,5 +1,8 @@
-# PayMod — https://www.fakepay.net/
+# PayMod crawler rules: allow public content and block non-public route prefixes; see sitemap.xml.
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
 
 Sitemap: https://www.fakepay.net/sitemap.xml

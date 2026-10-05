@@ -2,31 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PayMod | Free Client-Side Visual Mod for DonutSMP</title>
-  <meta name="description" content="PayMod is a free client-side Minecraft mod for DonutSMP that fakes your wallet balance, stats and payments — visual only. Fabric &amp; Forge, 1.20 – 1.21.x.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>DonutSMP Minecraft Visual Mod | PayMod for Fabric &amp; Forge</title>
+  <meta name="description" content="Preview wallet balances, stats, and payments in DonutSMP with PayMod, a free visual-only Minecraft mod for Fabric and Forge. Download PayMod today.">
+  <meta name="keywords" content="DonutSMP Minecraft mod, client-side visual mod, Minecraft wallet balance mod, Minecraft stat mod, fake payment visuals, Fabric mod, Forge mod">
+  <meta name="author" content="PayMod">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <link rel="canonical" href="https://www.fakepay.net/">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#040706">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- ==== search engines & social sharing ==== -->
-  <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://www.fakepay.net/">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="style.css" as="style" fetchpriority="high">
+  <link rel="preload" href="theme-3d.css" as="style" fetchpriority="high">
+  <!-- Social cards use the existing 1200x630 PayMod preview image. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PayMod">
+  <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://www.fakepay.net/">
-  <meta property="og:title" content="PayMod | Free Client-Side Visual Mod for DonutSMP">
-  <meta property="og:description" content="Visually rewrite your wallet balance, stats, and payments in Minecraft — 100% client-side, free download for Fabric &amp; Forge.">
+  <meta property="og:title" content="DonutSMP Minecraft Visual Mod | PayMod for Fabric &amp; Forge">
+  <meta property="og:description" content="Preview wallet balances, stats, and payments in DonutSMP with PayMod, a free visual-only Minecraft mod for Fabric and Forge. Download PayMod today.">
   <meta property="og:image" content="https://www.fakepay.net/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PayMod emerald block logo">
+  <meta property="og:image:alt" content="PayMod visual Minecraft mod for DonutSMP">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PayMod | Free Client-Side Visual Mod for DonutSMP">
-  <meta name="twitter:description" content="Visually rewrite your wallet balance, stats, and payments in Minecraft — 100% client-side, free download.">
+  <meta name="twitter:url" content="https://www.fakepay.net/">
+  <meta name="twitter:title" content="DonutSMP Minecraft Visual Mod | PayMod for Fabric &amp; Forge">
+  <meta name="twitter:description" content="Preview wallet balances, stats, and payments in DonutSMP with PayMod, a free visual-only Minecraft mod for Fabric and Forge. Download PayMod today.">
   <meta name="twitter:image" content="https://www.fakepay.net/og-image.png">
   <script type="application/ld+json">
   {
@@ -44,25 +52,82 @@
     "description": "Free client-side Minecraft mod for DonutSMP that visually rewrites wallet balances, player stats, and outgoing payments."
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "PayMod",
+    "url": "https://www.fakepay.net/",
+    "logo": "https://www.fakepay.net/icon-512.png",
+    "description": "Free client-side visual Minecraft mod for DonutSMP, with wallet, stat, and payment display customization."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PayMod",
+    "url": "https://www.fakepay.net/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is PayMod for DonutSMP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "PayMod is a free client-side visual Minecraft mod for DonutSMP. It changes how wallet balances, player stats, and outgoing payment flows appear in your own game client; it does not change server data or other players' views." }
+      },
+      {
+        "@type": "Question",
+        "name": "What exactly does it change visually?",
+        "acceptedAnswer": { "@type": "Answer", "text": "PayMod changes the wallet balances shown in menus and on your HUD, stat lines such as kills, deaths, streaks, playtime, and rank, plus visual payment flows with confirmation prompts, chat lines, and animated balance tickers. These changes render inside your own client." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the fake money real? Can I spend it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The money only exists on your screen. It does not leave your account, enter another player's account, or touch DonutSMP's economy; it is a visual layer for clips and screenshots." }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Minecraft versions and mod loaders work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "One universal jar covers Minecraft Java 1.20.1, 1.20.2, 1.20.4, 1.21, and 1.21.4+ on both Fabric and Forge." }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I install it?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Download the universal jar, place it in your .minecraft/mods folder, and launch your Fabric or Forge profile. Join DonutSMP to use the visual features; no configuration file is needed to start." }
+      }
+    ]
+  }
+  </script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="theme-3d.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
   <div id="rp-loader" class="out" role="status" aria-label="Loading page">
     <div class="loader-cube"></div>
   </div>
 
   <div class="h3">
-    <header role="banner">
-      <!-- Minimalist accessible header structure -->
+    <header class="site-header" role="banner">
+      <a class="skip-link" href="#main">Skip to main content</a>
+      <a class="site-brand" href="/" aria-label="PayMod home">PayMod <span>for DonutSMP</span></a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#balance">Wallet balance</a>
+        <a href="#stats">Player stat overrides</a>
+        <a href="#payments">Payment demo</a>
+        <a href="#faq">Installation FAQ</a>
+        <a class="site-download" href="FakePay-V4.1.jar" download>Download PayMod</a>
+      </nav>
     </header>
 
-    <main id="main">
+    <main id="main" role="main">
 
       <!-- ============ HERO ============ -->
-      <section class="h3-hero" id="hero" aria-label="Hero Section">
+      <section class="h3-hero" id="hero" aria-label="PayMod DonutSMP Minecraft mod introduction">
         <div class="h3-hero-stage" id="h3-hero-stage" aria-label="3D Interactive Minecraft Emerald Block">
           <div class="h3-bloom"></div>
           <div class="h3-cube-wrap">
@@ -70,8 +135,8 @@
           </div>
         </div>
         <div class="h3-hero-inner">
-          <span class="h3-kicker kicker-dsmp"><img class="dsmp-mark" src="donutsmp.png" alt="" width="26" height="26" decoding="async">PayMod • DonutSMP Visual Mod</span>
-          <h1 class="h3-display">Look rich.<br><em>Stay invisible.</em></h1>
+          <span class="h3-kicker kicker-dsmp"><img class="dsmp-mark" src="donutsmp.png" alt="" width="26" height="26" decoding="async" fetchpriority="high">PayMod • DonutSMP Visual Mod</span>
+          <h1 class="h3-display">DonutSMP Minecraft<br><em>Visual Mod.</em></h1>
           <p class="h3-lede">PayMod is a free, all-client-side Minecraft mod for DonutSMP that repaints your economy screen — wallet balance, stats, and even the payments you send — with whatever numbers you choose. Nobody else ever sees it; it all lives in your own client.</p>
           <div class="h3-cta-row">
             <a class="h3-btn" href="FakePay-V4.1.jar" download data-download aria-label="Download FakePay-V4.1 JAR">Download Mod</a>
@@ -190,7 +255,7 @@
       </section>
 
       <!-- ============ FAQ ============ -->
-      <section class="faq-sec" id="faq" aria-label="Frequently Asked Questions">
+      <section class="faq-sec" id="faq" aria-label="Frequently Asked Questions about the PayMod DonutSMP mod">
         <div class="h3-wrap">
           <div class="faq-header" data-reveal>
             <span class="h3-kicker">Frequently Asked Questions</span>
@@ -272,11 +337,11 @@
         <img class="dsmp-mark dsmp-mark--foot" src="donutsmp.png" alt="" width="20" height="20" loading="lazy" decoding="async">
       </div>
       <nav class="footer-links" aria-label="Footer Navigation">
-        <a href="#hero" data-scroll>Home</a>
+        <a href="#hero" data-scroll>PayMod home</a>
         <a href="#balance" data-scroll>Balance spoof</a>
         <a href="#stats" data-scroll>Stat overrides</a>
         <a href="#payments" data-scroll>Fake payments</a>
-        <a href="#faq" data-scroll>FAQ</a>
+        <a href="#faq" data-scroll>Installation and compatibility FAQ</a>
         <a href="FakePay-V4.1.jar" download data-download>Download .JAR</a>
       </nav>
       <div class="footer-copy">© 2026 PayMod. All rights reserved.</div>
@@ -285,6 +350,6 @@
 
   <div class="rp-toast" id="rp-toast" role="status" aria-live="polite"></div>
 
-  <script src="home-3d.js"></script>
+  <script defer src="home-3d.js"></script>
 </body>
 </html>

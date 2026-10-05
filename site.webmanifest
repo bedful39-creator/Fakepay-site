@@ -2,8 +2,8 @@
   "name": "PayMod for DonutSMP",
   "short_name": "PayMod",
   "description": "Free client-side visual mod for DonutSMP — balance, stats, and payments.",
-  "start_url": "./",
-  "display": "browser",
+  "start_url": "/",
+  "display": "standalone",
   "background_color": "#040706",
   "theme_color": "#040706",
   "icons": [

@@ -10,7 +10,7 @@ hosted — nothing below works for `localhost`.
 
 | Piece | Where |
 |---|---|
-| Title + meta description (156 chars — in Bing's healthy range) | `index.html` `<head>` |
+| Title + meta description (147-character description) | `index.html` `<head>` |
 | Canonical URL = the live URL | `index.html` `<head>` |
 | Open Graph + Twitter cards (with `og-image.png`) | `index.html` `<head>` |
 | Structured data (SoftwareApplication, free / $0) | `index.html` JSON-LD |
